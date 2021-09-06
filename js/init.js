@@ -6,6 +6,8 @@ const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const usernav = document.getElementById('usernav');
+const close = document.getElementById('close');
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -44,4 +46,14 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  if (localStorage.getItem('user')) {
+      usernav.innerHTML = '<a href="#" id="close" class="">' + localStorage.getItem('user') + '</a>';
+  } else {
+      usernav.innerHTML = '<a href="login.html" id="close" class=""> Iniciar sesion </a>';
+  }
+
+  close.addEventListener('click', function(e) {
+      localStorage.removeItem('user');
+      location.href='index.html';
+  });
 });

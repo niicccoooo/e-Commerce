@@ -52,7 +52,7 @@ function showProductsList(array) {
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ category.name +`</h4>
-                        <small class="text-muted">` + category.currency + `` +category.cost + ` ` + category.soldCount + `</small>
+                        <small class="text-muted">` + category.currency + ` ` +category.cost + ` <br> Vendidos: ` + category.soldCount + `</small>
                     </div>
                 <p>` + category.description + `</p>
                 </div>
@@ -136,5 +136,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
         buscarTexto = document.getElementById("searchForm").value;
         showProductsList();
     });
-    
 });
