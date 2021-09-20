@@ -44,7 +44,7 @@ function showProductsList(array) {
             ((buscarTexto == undefined) || (buscarTexto != undefined && category.name.toLowerCase().includes(buscarTexto.toLowerCase())))) {
 
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
@@ -57,7 +57,7 @@ function showProductsList(array) {
                 <p>` + category.description + `</p>
                 </div>
             </div>
-        </div>
+        </a>
         `
             }
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
@@ -75,6 +75,8 @@ function sortAndShowProducts(sortCriteria, productsArray) {
     //Muestro las categorías ordenadas
     showProductsList();
 };
+
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -132,8 +134,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("searchForm").addEventListener("keyup", function () {
-
         buscarTexto = document.getElementById("searchForm").value;
         showProductsList();
     });
+
 });

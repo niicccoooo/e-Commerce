@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -15,7 +16,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="productPages">
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
@@ -33,24 +34,98 @@
           </div>
         </div>
     </div>
-</nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  </nav>
+  
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="categoryName"></h3>
+      <hr class="my-3">
+    
+    <div class="infoProducts">
+      <dt>Categoría</dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="categoryDescription"></p>
+        </dd>
+
+        <dt>Cantidad vendida</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+      </div>  
+
+        <dt>Imágenes del producto:</dt>
+        <dd> 
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  >
+            <div class="carousel-inner">
+
+              <div id="productImagesGallery">
+              
+              </div>
+                
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+
+          </div>
+
     </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </dd>
+    </dl>
+    
+    <div class="userComm">
+    <dt><strong>COMENTARIOS</strong></dt><br>
+    <dd>
+      <p id="comentario"></p>
+    </dd>
+    </dl>
+
+    <dt>Deje un comentario!</dt>
+    <dd>
+      <form action="" id="formularioComentario" onsubmit="return postComment(this)">
+        <textarea name="message" rows="5" cols="45" placeholder="Escriba aqui..."></textarea>
+        <br>
+        <p>Puntuacion</p>
+        <select name="stars" id="stars">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <br>
+        <br>
+
+        <input type="submit" />
+      </form>
     </div>
+      </div>
+    </dd>
+    </dl>
+    </div>
+
+  </main>
+  
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -59,6 +134,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>

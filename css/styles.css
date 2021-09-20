@@ -139,3 +139,22 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.productPages {
+  background-color: whitesmoke;
+}
+
+#categoryName {
+  text-align: center;
+  border: 2px black;
+}
+
+.infoProducts {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.userComm {
+  text-align: center;
+  border: 1px dashed black;
+}
