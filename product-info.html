@@ -23,14 +23,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
 
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="usernav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Inicio de Sesion
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#" id="close"><i class="fas fa-door-open" ></i>Cerrar Sesion</a>
+            <a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <a class="dropdown-item" href="my-profile.html"><i class="fas fa-user-circle"></i> Perfil</a>
+            <a class="dropdown-item" href="#" id="close"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
           </div>
         </div>
     </div>
@@ -86,26 +87,33 @@
 
           </div>
 
-          <div class="relatedProd">
-            <p>Productos relacionados:</p>
-          </div>
-
     </div>
     </dd>
     </dl>
+    <br>
+
+      <div class="otrosProductos">
+      <dt>Te puede interesar:</dt>
+      <dd>
+        <div></div>
+        <div class="row text-center text-md-center pt-2" id="relatedproducts">
+        </div>
+      </dd>
+      </dl>
+      </div>
     
+
     <div class="userComm">
-    <dt><strong>COMENTARIOS</strong></dt><br>
+    <dt><strong>COMENTARIOS</strong></dt><hr>
     <dd>
       <p id="comentario"></p>
     </dd>
     </dl>
-
+    <hr>
     <dt>Deje un comentario!</dt>
     <dd>
       <form action="" id="formularioComentario" onsubmit="return postComment(this)">
-        <textarea name="message" rows="5" cols="45" placeholder="Escriba aqui..."></textarea>
-        <br>
+        <textarea name="message" rows="5" cols="40" placeholder="Escriba aqui..."></textarea>
         <p>Puntuacion</p>
         <select name="stars" id="stars">
           <option value="1">1</option>
@@ -116,7 +124,7 @@
         </select>
 
         <br>
-        <br>
+        <hr>
 
         <input type="submit" />
       </form>

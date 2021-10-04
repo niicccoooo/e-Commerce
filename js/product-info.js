@@ -63,6 +63,27 @@ function showStars(markedStars) {
 }
 
 
+function showRelatedProducts(array) {
+    let htmlContentToAppend = "";
+
+    for (i = 0; i < category.relatedProducts.length; i++) {
+
+        let pos = category.relatedProducts[i];
+        let related = array[pos];
+
+        htmlContentToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+        <div class="d-block mb-4 h-100">
+     <img class="img-fluid img-thumbnail" src="` + related.imgSrc + `" alt="">
+        </div>
+        </div>  `
+
+    }
+
+    document.getElementById("relatedproducts").innerHTML = htmlContentToAppend;
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -84,27 +105,29 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCriteriaHTML.innerHTML = category.category;
 
             
-        //Muestro las imagenes en forma de galería
-        showImagesGallery(category.images);
+
+            //Muestro las imagenes en forma de galería
+            showImagesGallery(category.images);
 
 
-        getJSONData(PRODUCTS_URL).then(function (resultProd) {
-            if (resultProd.status === "ok") {
 
-                related = resultProd.data;
-                showRelatedImages(related);
+            getJSONData(PRODUCTS_URL).then(function (resultProd) {
+                if (resultProd.status === "ok") {
+
+                    showRelatedProducts(resultProd.data);
                 
                 }
             });
         }
     });
 
+
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultComm) {
         if (resultComm.status === "ok") {
 
             commentNmbr = resultComm.data;
             showRelatedComments(commentNmbr);
+
         }
     });
-
 });
