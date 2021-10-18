@@ -36,6 +36,7 @@ function sortProducts(criteria, array) {
 
 function showProductsList(array) {
     let htmlContentToAppend = "";
+    
     for(let i = 0; i < currentProductList.length; i++){
         let category = currentProductList[i];
 
