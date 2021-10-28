@@ -17,6 +17,8 @@
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
+  height: 30vw;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
