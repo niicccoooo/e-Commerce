@@ -93,22 +93,29 @@
 </head>
 
 <body>
-  <h1>Pagina de Ingreso</h2><br>    
+
+  <h1>Pagina de Ingreso</h2><br> 
+
   <form id="myForm">
     <div class="container">
       <div class="login-box">
         <div class="login-form"></div>
+
           <label for="usuario"><b>Usuario</b></label>
-          <input type="text" id="usuario" placeholder="Ingresar usuario" name="usuario">
+          <input type="email" id="usuario" placeholder="Ingresar usuario" name="usuario">
+
           <label for="contra"><b>Contraseña</b></label>
           <input type="password" id="contra" placeholder="Ingresar contraseña" name="contra">
+          
         </div>
       </div>
     </div>
   </form>
+
   <div class="btn-ingreso">
     <button id="btn-submit" onclick="login()" type="submit">INGRESAR</button>
   </div>
+
 
   <script src="js/login.js"></script>
   <script src="js/products.js"></script>

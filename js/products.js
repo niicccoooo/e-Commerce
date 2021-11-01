@@ -44,26 +44,34 @@ function showProductsList(array) {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount)) &&
             ((buscarTexto == undefined) || (buscarTexto != undefined && category.name.toLowerCase().includes(buscarTexto.toLowerCase())))) {
 
-        htmlContentToAppend += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ category.name +`</h4>
-                        <small class="text-muted">` + category.currency + ` ` +category.cost + ` <br> Vendidos: ` + category.soldCount + `</small>
-                    </div>
-                <p>` + category.description + `</p>
-                </div>
-            </div>
-        </a>
-        `
+                htmlContentToAppend += `
+                
+                <div class="col-sm"  width="30%">
+                <a href="product-info.html" class="list-group-item list-group-item-action">
+                     <div class="row">
+                         <div class="">
+                             <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+                           
+                         </div>
+                         <div class="">
+                             <div class="">
+                                 <h4 class="">`+ category.name + `</h4>
+                                 <small class="text-muted">` + category.soldCount + ` artículos </small>
+                             </div>
+                             <p class="">` + category.description + `</p>
+                              <div> $USD ` + category.cost + ` </div>
+                         </div>
+                     </div>
+                    
+                </a>
+               </div>
+              `
             }
+
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 };
+
 
 function sortAndShowProducts(sortCriteria, productsArray) {
     currentSortCategory = sortCriteria;

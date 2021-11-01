@@ -28,11 +28,14 @@
       }
     }
   </style>
+
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+
 </head>
+
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -54,14 +57,65 @@
         </div>
     </div>
 </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+
+
+<div class="text-center p-4">
+  <h2>Mi Perfil</h2>
+</div>
+
+<img src="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png" alt="Icono" id="fotoperfil">
+
+<div class="container p-4">
+  <form id="needs-validation" novalidate>
+
+      <div class="row my-4">
+          <div class="col-md-6">
+              <label>Nombres </label>
+              <input type="text" id="nombres" class="form-control" placeholder="Nombres" required>
+          </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="col-md-6">
+            <label>Apellidos </label>
+            <input type="text" id="apellidos" class="form-control" placeholder="Appellidos" required>
+        </div>
+      </div>
+
+      <div class="row my-4">
+          <div class="col-md-6">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" class="form-control" placeholder="" required>
+          </div>
+      </div>
+
+      <div class="row my-4">
+          <div class="col-md-8">
+              <label for="email">Email </label>
+              <input type="email" class="form-control" id="email" placeholder="mail@algo.com" required>
+          </div>
+      </div>
+
+      <div class="row my-4">
+          <div class="col-md-8">
+              <label for="telefono">Telefono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="Numero" minlength="8" required>
+          </div>
+      </div>
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <button class="btn btn-success">Guardar</button>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
@@ -82,11 +136,13 @@
       <div></div>
     </div>
   </div>
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
-</body>
 
+</body>
 </html>

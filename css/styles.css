@@ -160,3 +160,10 @@ a.custom-card:hover {
   text-align: center;
   border: 1px dashed black;
 }
+
+#fotoperfil {
+  float: right;
+  margin-right: 22%;
+  margin-top: 3%;
+  width: 18%;
+}

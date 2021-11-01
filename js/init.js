@@ -43,10 +43,13 @@ var getJSONData = function(url){
     });
 }
 
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+
+document.addEventListener("DOMContentLoaded", function(e) {
+
   if (localStorage.getItem('user')) {
       usernav.innerHTML = '<a href="#" id="close" class="">' + localStorage.getItem('user') + '</a>';
   } else {
@@ -54,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   }
 
   close.addEventListener('click', function(e) {
-      localStorage.removeItem('user');
+      localStorage.clear();
       location.href='index.html';
   });
+
 });
