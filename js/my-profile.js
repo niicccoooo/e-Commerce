@@ -1,28 +1,4 @@
 
-function guardarUsuario() {
-
-    let datosPerfil = {
-        nombres: document.getElementById("nombres").value,
-        apellidos: document.getElementById("apellidos").value,
-        edad: document.getElementById("edad").value,
-        email: document.getElementById("email").value,
-        telefono: document.getElementById("telefono").value,
-    }
-
-    let mailUser = {
-        email: document.getElementById("email").value
-    };
-
-    let mailUser_json = JSON.stringify(mailUser);
-
-    localStorage.setItem("mailUser", mailUser_json);
-    localStorage.setItem('profile', JSON.stringify(datosPerfil));
-
-    alert("Se han guardado tus datos!");
-
-}
-
-
 function mostrarUsuario() {
 
     let datos_json = localStorage.getItem("mailUser");
@@ -45,6 +21,30 @@ function mostrarUsuario() {
 
         document.getElementById("email").value = datos.email;
     }
+
+}
+
+
+function guardarUsuario() {
+
+    let datosPerfil = {
+        nombres: document.getElementById("nombres").value,
+        apellidos: document.getElementById("apellidos").value,
+        edad: document.getElementById("edad").value,
+        email: document.getElementById("email").value,
+        telefono: document.getElementById("telefono").value,
+    }
+
+    let mailUser = {
+        email: document.getElementById("email").value
+    };
+
+    let mailUser_json = JSON.stringify(mailUser);
+
+    localStorage.setItem("mailUser", mailUser_json);
+    localStorage.setItem('profile', JSON.stringify(datosPerfil));
+
+    alert("Se han guardado tus datos!");
 
 }
 
